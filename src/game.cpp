@@ -1,6 +1,8 @@
 #include "game.h"
 #include <SDL2/SDL.h>
 #include <iostream>
+#include "map.h"
+#include <algorithm>
 
 Game::Game() : window(nullptr), renderer(nullptr), isRunning(false) {}
 
@@ -27,7 +29,7 @@ bool Game::init() {
     }
 
     player = new Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 0);
-    map = new Map();
+    map = new Map(renderer);
     gameRenderer = new Renderer(renderer);
     raycaster = new Raycaster(renderer);
 

@@ -107,7 +107,7 @@ void Raycaster::castRays(const Player& player, const Map& map) {
         // Render the wall slice
         SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
         for (int y = drawStart; y <= drawEnd; ++y) {
-            SDL_RenderDrawPoint(renderer, x, y);
+            SDL_RenderDrawLine(renderer, x, drawStart, x, drawEnd);
         }
     }
 }
